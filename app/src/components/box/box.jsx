@@ -16,7 +16,7 @@ const Box = () => {
     // Chama a função para alternar entre X e O
     functionPlayX();
   };
-
+a
   return (
     <div className={`box ${!playX ? 'x' : 'o'}`} onClick={handleClick}>
       {/* Conteúdo da caixa */}
