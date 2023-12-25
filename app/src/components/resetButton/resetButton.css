@@ -1,0 +1,12 @@
+.resetButton {
+    background-color: white;
+    color: #0DA192;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 20px;
+    cursor: pointer;
+    /* font-family: Poppins; */
+    font-family: Poppins, sans-serif;
+}

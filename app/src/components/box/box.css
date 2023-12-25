@@ -1,0 +1,36 @@
+.box {
+    width: 50%;
+    height: 50%;
+    background: none;
+    position: relative
+}
+
+.o {
+    border: 11px solid white;
+    border-radius: 100%;
+    background: none;
+}
+
+.x {
+    background: none;
+    width: 75%;
+    height: 75%;
+}
+.x::before, .x::after {
+    content: '';
+    height: calc(100% * 0.15);
+    width: calc(100% * 0.9);
+    background: #c73e3e;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+}
+
+.x::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.x::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
