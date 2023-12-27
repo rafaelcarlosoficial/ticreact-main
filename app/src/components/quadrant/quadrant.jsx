@@ -4,7 +4,11 @@ import Box from '../box/box'
 
 const quadrant = () => {
   return (
-    <div className='cell'><Box/></div>
+    <div className='cell'>
+     
+        <Box/>
+
+    </div>
   )
 }
 

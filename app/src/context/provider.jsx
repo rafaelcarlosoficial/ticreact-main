@@ -1,24 +1,39 @@
-import React, {useState} from 'react'
-import AppContext from './app'
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import AppContext from './Context';
 
-const Provider = ({children}) => {
-    const [playX, setPlayX] = useState(true);
+function Provider({ children }) {
 
-    const functionPlayX = (target) => {
-        
-        console.log(target)
-        setPlayX(!playX);
-      };
+  const [switchTurn, setSwitchTurn ] = useState(true)
 
-    const value = {
-        playX,
-        setPlayX,
-        functionPlayX
-    }
+  const insertTheX = (div) => {
+      div.className = `box x`;
+      setSwitchTurn(false)
+  };
 
-    return (
-    <AppContext.Provider value={value}>{children}</AppContext.Provider>
-  )
+  const insertTheO = (div) => {
+    div.className = `box o`
+    setSwitchTurn(true)
+  }
+
+  const value = {
+    switchTurn, 
+    setSwitchTurn,
+    insertTheX,
+    insertTheO
+  };
+
+
+  
+  return (
+    <AppContext.Provider value={value}>
+      {children}
+    </AppContext.Provider>
+  );
 }
 
-export default Provider
+Provider.propTypes = {
+  children: PropTypes.any.isRequired,
+};
+
+export default Provider;

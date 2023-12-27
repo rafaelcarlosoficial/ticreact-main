@@ -1,25 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './box.css';
-import AppContext from '../../context/app';
+import AppContext from '../../context/Context';
 
 const Box = () => {
-  const { playX, functionPlayX } = useContext(AppContext);
+  const { switchTurn, setSwitchTurn, insertTheX, insertTheO } = useContext(AppContext);
 
-  const handleClick = (event) => {
-    // Obtém a referência para a div clicada
-    const clickedDiv = event.target;
 
-    // Adiciona a classe com base na lógica desejada
-    clickedDiv.classList.toggle('x', !playX);
-    clickedDiv.classList.toggle('o', playX);
-
-    // Chama a função para alternar entre X e O
-    functionPlayX();
-  };
-a
+  
   return (
-    <div className={`box ${!playX ? 'x' : 'o'}`} onClick={handleClick}>
-      {/* Conteúdo da caixa */}
+    <div className={`box`} onClick={(e) => switchTurn ? insertTheX(e.target) : insertTheO(e.target)}>
     </div>
   );
 };
