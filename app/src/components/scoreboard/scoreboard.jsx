@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './scoreboard.css'
 
-const scoreboard = () => {
+
+const ScoreBoard = ({ XorO, ScoreBoardRef }) => {
+    
   return (
-    <div className='scoreboard'><p><span>X</span>- 1</p></div>
+    <div className='scoreboard' ref={ScoreBoardRef}><p><span>{XorO}</span>- 1</p></div>
   )
 }
+                      
 
-export default scoreboard
+export default ScoreBoard;                   

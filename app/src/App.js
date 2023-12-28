@@ -1,20 +1,25 @@
 import React, { useState, useContext } from 'react';
 import './App.css';
 import Quadrant from './components/quadrant/quadrant';
-import Scoreboard from './components/scoreboard/scoreboard';
+import ScoreBoard from './components/scoreboard/scoreboard';
 import ResetButton from './components/resetButton/resetButton';
-import Provider from './context/provider';
+import Provider from './context/Provider';
+import AppContext from './context/Context';
+import ScoreboardContext from './context/ScoreboardContext';
+
 
 function App() {
   const quadrants = new Array(9).fill(null);
-  const scores = new Array(2).fill(null);
+  const scores = ['X', 'O'];
+  const  { ScoreBoardRef } = useContext(AppContext);
 
   return (
+ 
     <Provider>
-
+      
       <div className='score'>
         {scores.map((score, index) => (
-          <Scoreboard key={index} />
+          <ScoreBoard key={index} XorO={score} ScoreBoardRef={ScoreBoardRef}/>
         ))}
       </div>
 
@@ -28,6 +33,7 @@ function App() {
         <ResetButton />
       </div>
       </Provider>
+
   );
 }
 
