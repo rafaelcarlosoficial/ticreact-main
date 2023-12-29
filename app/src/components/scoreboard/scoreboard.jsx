@@ -4,18 +4,10 @@ import AppContext from '../../context/Context';
 
 
 const ScoreBoard = ({ XorO }) => {
-  // const [border, setBorder] = useState(true)
-  const{ switchTurn, setSwitchTurn } = useContext(AppContext);
+  const{ switchTurn } = useContext(AppContext);
   const ScoreBoardRefContent = useRef();
   const DivScoreBoardRef = useRef();
-  console.log(DivScoreBoardRef.current)
-  console.log(ScoreBoardRefContent.current)
 
-  // useEffect(() => {
-  //   if(ScoreBoardRefContent.current.textContent === 'X'){
-  //     DivScoreBoardRef.current.className = 'scoreboard border'
-  //   }
-  // }, [])
 
   useEffect(() => {
  

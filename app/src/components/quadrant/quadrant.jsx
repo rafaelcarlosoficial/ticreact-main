@@ -2,12 +2,10 @@ import React from 'react'
 import  './quadrant.css'
 import Box from '../box/box'
 
-const quadrant = () => {
+const quadrant = ({ index }) => {
   return (
     <div className='cell'>
-     
-        <Box/>
-
+        <Box index={index}/>
     </div>
   )
 }

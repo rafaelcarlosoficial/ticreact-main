@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './box.css';
 import AppContext from '../../context/Context';
 
-const Box = () => {
+const Box = ({ index }) => {
   const { switchTurn, insertTheX, insertTheO } = useContext(AppContext);
 
   const [hasBeenClicked, setHasBeenClicked] = useState(false)
@@ -15,10 +15,12 @@ const Box = () => {
   }
 
   
+  
   return (
-    <div className={`box`} onClick={(e) => insertXorO(e.target)}>
+    <div className={`box`} data-index={index} onClick={(e) => insertXorO(e.target)}>
     </div>
   );
+  
 };
 
 export default Box;

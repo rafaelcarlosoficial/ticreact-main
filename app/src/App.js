@@ -11,6 +11,32 @@ function App() {
   const quadrants = new Array(9).fill(null);
   const scores = ['X', 'O'];
 
+  const WinningCombinations = [ 
+    //paralelas
+   [0,1,2],
+   [3,4,5],
+   [6,7,8],
+
+   //diagonais
+   [0,4,8],
+   [2,4,6],
+    //verticais
+    [0,3,6],
+    [1,4,7],
+    [2,5,8]
+  ]
+  //mover para o Provider depois...
+  // const DataIndex = document.querySelectorAll('[data-index]');
+  // console.log(DataIndex)
+  // O que eu quero fazer com as posições selecionadas
+  //vefificar se pelo menos 3 elementos de DataIndex tem a combinação da class X ou da class O nas posições desejadas
+
+
+
+
+
+
+  //como eu vou capturar o número do data-index e verificar se é igual a algum dos arrays?
 
   return (
  
@@ -22,15 +48,21 @@ function App() {
         ))}
       </div>
 
-      <div className='container'>
-        {quadrants.map((quadrant, index) => (
-          <Quadrant key={index}/>
-        ))}
-      </div>
+
+    <div className='container'>
+      {quadrants.map((quadrant, index) => {
+        console.log('Índice antes de passar para o Quadrant:', index);
+      return (
+        <Quadrant key={index} index={index} />
+      );
+      })}
+    </div>
+
 
       <div className='reset'>
         <ResetButton />
       </div>
+
       </Provider>
 
   );
