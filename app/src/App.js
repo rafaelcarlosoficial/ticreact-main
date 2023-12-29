@@ -26,10 +26,19 @@ function App() {
     [2,5,8]
   ]
   //mover para o Provider depois...
-  // const DataIndex = document.querySelectorAll('[data-index]');
-  // console.log(DataIndex)
-  // O que eu quero fazer com as posições selecionadas
-  //vefificar se pelo menos 3 elementos de DataIndex tem a combinação da class X ou da class O nas posições desejadas
+  const DataIndex = document.querySelectorAll('[data-index]');
+  console.log(DataIndex)
+
+  DataIndex.forEach((data) => {
+    const dataIndexValue = data.dataset.index;
+    console.log('Valor do data-index', dataIndexValue);
+    console.log('typeof do meu dataindex', typeof(dataIndexValue));
+    console.log('dataa',data)
+    console.log('class', data.className)
+    // console.log()
+  })
+  
+  //como eu verifico sem esse dataIndeex tem class x ou o
 
 
 
