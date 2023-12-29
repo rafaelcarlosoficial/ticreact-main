@@ -5,13 +5,12 @@ import ScoreBoard from './components/scoreboard/scoreboard';
 import ResetButton from './components/resetButton/resetButton';
 import Provider from './context/Provider';
 import AppContext from './context/Context';
-import ScoreboardContext from './context/ScoreboardContext';
 
 
 function App() {
   const quadrants = new Array(9).fill(null);
   const scores = ['X', 'O'];
-  const  { ScoreBoardRef } = useContext(AppContext);
+
 
   return (
  
@@ -19,7 +18,7 @@ function App() {
       
       <div className='score'>
         {scores.map((score, index) => (
-          <ScoreBoard key={index} XorO={score} ScoreBoardRef={ScoreBoardRef}/>
+          <ScoreBoard key={index} XorO={score} />
         ))}
       </div>
 
