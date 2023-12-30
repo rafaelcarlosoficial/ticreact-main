@@ -26,20 +26,23 @@ function App() {
     [2,5,8]
   ]
   //mover para o Provider depois...
-  const DataIndex = document.querySelectorAll('[data-index]');
-  console.log(DataIndex)
+  // const DataIndex = document.querySelectorAll('[data-index]');
+  // console.log(DataIndex)
 
-  DataIndex.forEach((data) => {
-    const dataIndexValue = data.dataset.index;
-    console.log('Valor do data-index', dataIndexValue);
-    console.log('typeof do meu dataindex', typeof(dataIndexValue));
-    console.log('dataa',data)
-    console.log('class', data.className)
-    // console.log()
-  })
+  // DataIndex.forEach((data) => {
+  //   const dataIndexValue = data.dataset.index;
+  //   console.log('Valor do data-index', dataIndexValue);
+  //   console.log('typeof do meu dataindex', typeof(dataIndexValue));
+  //   console.log('dataa',data)
+  //   console.log('class', data.className)
+  //   // console.log()
+  // })
   
   //como eu verifico sem esse dataIndeex tem class x ou o
-
+  // eu preciso pegar os index de todos a cada clique e verificar se alguem ganhou
+  // como eu pego cada item e verifico se existe alguma combinação entre eles
+  //como eu selecione por exemplo o item 1,2,3 e vejo se estão na paralela
+  // eu precisarei fazer uma função, mas a pergunta é como que eu faço para pegar todas as posições na hora do clique 
 
 
 
