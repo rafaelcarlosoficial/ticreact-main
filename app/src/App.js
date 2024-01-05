@@ -63,7 +63,6 @@ function App() {
 
     <div className='container'>
       {quadrants.map((quadrant, index) => {
-        console.log('Índice antes de passar para o Quadrant:', index);
       return (
         <Quadrant key={index} index={index} />
       );
