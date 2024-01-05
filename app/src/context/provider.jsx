@@ -11,10 +11,8 @@ function Provider({ children }) {
 
   const DataIndex = document.querySelectorAll('[data-index]');
 
-  const checkCombinations = (Position, Classname) => {
-    if(Classname === 'box x' || 'box o'){
-
-    }
+  const checkCombinations = (Combination) => {
+   
   }
 
   const WinningCombinations = [
@@ -31,23 +29,19 @@ function Provider({ children }) {
   ]
 
 
+
   
 
   const CheckWinner = (AllPositions) => {
-    AllPositions.forEach((data) => {
-      const PositionIndexValue = data.dataset.index;
-      const Position = parseInt(PositionIndexValue);
-      console.log(Position)
-      const Classname = data.className;
-      // criar uma função que coloca ele na posição do array.
-    });
-    
+
+    console.log(AllPositions)
 
   }
   
   const insertTheX = (div, index) => {
       div.className = `box x`;
-      console.log(index)
+      CheckWinner(DataIndex)
+
       setSwitchTurn(false)
 
   };
