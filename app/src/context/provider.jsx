@@ -4,16 +4,28 @@ import AppContext from './Context';
 
 
 function Provider({ children }) {
-
+  let StoreValue = [];
+  let Winner = false;
 
   const [switchTurn, setSwitchTurn ] = useState(true)
   const ScoreBoardRef = useRef(null);
 
   const DataIndex = document.querySelectorAll('[data-index]');
 
-  const checkCombinations = (Combination) => {
-   
+  const CheckForWin = (ClassName) => {
+      const DataIndex = document.querySelectorAll('[data-index]');
+      
+      WinningCombinations.some((combination) => {
+      combination.map((index) => {
+        const NameClass = DataIndex[index].classList.value
+        console.log(NameClass)
+      })
+      })
+
+
+
   }
+
 
   const WinningCombinations = [
     [0,1,2],
@@ -40,14 +52,14 @@ function Provider({ children }) {
   
   const insertTheX = (div, index) => {
       div.className = `box x`;
-      CheckWinner(DataIndex)
-
+      CheckForWin('box x')
       setSwitchTurn(false)
 
   };
 
   const insertTheO = (div, index) => {
     div.className = `box o`;
+    // checkForWin('box o')
     setSwitchTurn(true)
   }
 
