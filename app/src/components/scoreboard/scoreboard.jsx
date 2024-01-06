@@ -4,10 +4,9 @@ import AppContext from '../../context/Context';
 
 
 const ScoreBoard = ({ XorO }) => {
-  const{ switchTurn } = useContext(AppContext);
+  const{ switchTurn, xScored, oScored} = useContext(AppContext);
   const ScoreBoardRefContent = useRef();
   const DivScoreBoardRef = useRef();
-
 
   useEffect(() => {
  
@@ -21,7 +20,7 @@ const ScoreBoard = ({ XorO }) => {
   return (
     <div className={XorO === 'X' ? 'scoreboard border' : 'scoreboard'} ref={DivScoreBoardRef}>
       <p>
-        <span ref={ScoreBoardRefContent}>{XorO}</span>- 1
+        <span ref={ScoreBoardRefContent}>{XorO}</span>- {XorO === 'X' ? xScored : oScored}
       </p>
     </div>
   );
